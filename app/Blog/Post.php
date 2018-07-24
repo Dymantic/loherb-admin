@@ -10,6 +10,6 @@ class Post extends Model
     use HasTranslations;
 
     public $translatable = ['title', 'intro', 'description'];
-    
+
     protected $fillable = ['title', 'intro', 'description'];
 }

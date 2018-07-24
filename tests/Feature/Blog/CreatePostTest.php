@@ -24,6 +24,10 @@ class CreatePostTest extends TestCase
         $response = $this->json("POST", "blog/posts", $post_data);
         $response->assertStatus(200);
 
-        $this->assertDatabaseHas('posts', ['title' => json_encode(['en' => 'Test Title'])]);
+        $this->assertDatabaseHasWithTranslations('posts', [
+            'title' => ['en' => 'Test Title'],
+            'description' => ['en' => 'Test Description'],
+            'intro' => ['en' => 'Test Intro']
+        ]);
     }
 }
