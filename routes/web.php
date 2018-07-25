@@ -15,4 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('blog/posts', 'Blog\PostsController@store');
+Route::post('login', 'Auth\LoginController@login');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::post('logout', 'Auth\LoginController@logout');
+    Route::post('users', 'UsersController@store');
+    Route::post('users/{user}', 'UsersController@update');
+    Route::delete('users/{user}', 'UsersController@delete');
+
+    Route::post('reset-password', 'UserPasswordController@update');
+
+    Route::post('blog/posts', 'Blog\PostsController@store');
+    Route::post('blog/posts/{post}', 'Blog\PostsController@update');
+});
+
+

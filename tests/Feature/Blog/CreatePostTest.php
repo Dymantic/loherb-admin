@@ -2,12 +2,24 @@
 
 namespace Tests\Feature\Blog;
 
+use App\Blog\Post;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class CreatePostTest extends TestCase
 {
     use RefreshDatabase;
+
+    /**
+     *@test
+     */
+    public function a_guest_may_not_create_a_post()
+    {
+        $response = $this->asGuest()->json("POST", "/blog/posts", ["title" => ["en" => "hello"]]);
+        $response->assertStatus(401);
+
+        $this->assertCount(0, Post::all());
+    }
 
     /**
      *@test
@@ -21,7 +33,7 @@ class CreatePostTest extends TestCase
           'intro' => ['en' => 'Test Intro']
         ];
 
-        $response = $this->json("POST", "blog/posts", $post_data);
+        $response = $this->asLoggedInUser()->json("POST", "blog/posts", $post_data);
         $response->assertStatus(200);
 
         $this->assertDatabaseHasWithTranslations('posts', [
@@ -29,5 +41,34 @@ class CreatePostTest extends TestCase
             'description' => ['en' => 'Test Description'],
             'intro' => ['en' => 'Test Intro']
         ]);
+    }
+
+    /**
+     *@test
+     */
+    public function a_blog_post_may_be_created_with_only_a_title()
+    {
+        $this->withoutExceptionHandling();
+        $post_data = [
+            'title' => ['zh' => '満版復'],
+        ];
+
+        $response = $this->asLoggedInUser()->json("POST", "blog/posts", $post_data);
+        $response->assertStatus(200);
+
+        $this->assertDatabaseHasWithTranslations('posts', [
+            'title' => ['zh' => '満版復'],
+        ]);
+    }
+
+    /**
+     *@test
+     */
+    public function the_title_must_be_present_in_at_least_a_single_language()
+    {
+        $response = $this->asLoggedInUser()->json("POST", "blog/posts", []);
+        $response->assertStatus(422);
+
+        $response->assertJsonValidationErrors('title');
     }
 }

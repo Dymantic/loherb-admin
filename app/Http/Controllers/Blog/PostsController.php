@@ -10,10 +10,16 @@ class PostsController extends Controller
 {
     public function store()
     {
+        request()->validate(['title' => 'required']);
         Post::create([
             'title' => request('title'),
             'description' => request('description'),
             'intro' => request('intro'),
         ]);
+    }
+
+    public function update(Post $post)
+    {
+        $post->update(request()->only(['title', 'intro', 'description']));
     }
 }

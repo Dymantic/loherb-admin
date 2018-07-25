@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function resetPassword($new_password)
+    {
+        $this->password = bcrypt($new_password);
+        return $this->save();
+    }
 }

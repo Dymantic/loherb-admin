@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -15,5 +16,16 @@ abstract class TestCase extends BaseTestCase
         })->all();
 
         return $this->assertDatabaseHas($table, $encodedAttributes);
+    }
+
+    protected function asGuest()
+    {
+        return $this;
+    }
+
+    protected function asLoggedInUser()
+    {
+        $this->actingAs(factory(User::class)->create());
+        return $this;
     }
 }
