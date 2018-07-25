@@ -22,12 +22,13 @@ class UserPasswordResetTest extends TestCase
 
         $user = factory(User::class)->create(['password' => bcrypt('old_password')]);
 
-        $response = $this->actingAs($user)->json("POST", "reset-password", [
+        $response = $this->actingAs($user)->post("reset-password", [
             'current_password' => 'old_password',
             'password' => 'new_password',
             'password_confirmation' => 'new_password'
         ]);
-        $response->assertStatus(200);
+        $response->assertStatus(302);
+        $response->assertRedirect("/");
 
         $this->assertTrue(Hash::check('new_password', $user->fresh()->password));
     }
@@ -39,13 +40,13 @@ class UserPasswordResetTest extends TestCase
     {
         $user = factory(User::class)->create(['password' => bcrypt('old_password')]);
 
-        $response = $this->actingAs($user)->json("POST", "reset-password", [
+        $response = $this->actingAs($user)->post("reset-password", [
             'current_password' => 'INCORRECT_password',
             'password' => 'new_password',
             'password_confirmation' => 'new_password'
         ]);
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors('current_password');
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors('current_password');
     }
 
     /**
@@ -55,13 +56,13 @@ class UserPasswordResetTest extends TestCase
     {
         $user = factory(User::class)->create(['password' => bcrypt('old_password')]);
 
-        $response = $this->actingAs($user)->json("POST", "reset-password", [
+        $response = $this->actingAs($user)->post("reset-password", [
             'current_password' => 'old_password',
             'password' => '',
             'password_confirmation' => ''
         ]);
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors('password');
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors('password');
     }
 
     /**
@@ -71,13 +72,13 @@ class UserPasswordResetTest extends TestCase
     {
         $user = factory(User::class)->create(['password' => bcrypt('old_password')]);
 
-        $response = $this->actingAs($user)->json("POST", "reset-password", [
+        $response = $this->actingAs($user)->post("reset-password", [
             'current_password' => 'old_password',
             'password' => 'new_password',
             'password_confirmation' => ''
         ]);
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors('password');
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors('password');
     }
 
     /**
@@ -87,12 +88,12 @@ class UserPasswordResetTest extends TestCase
     {
         $user = factory(User::class)->create(['password' => bcrypt('old_password')]);
 
-        $response = $this->actingAs($user)->json("POST", "reset-password", [
+        $response = $this->actingAs($user)->post("reset-password", [
             'current_password' => 'old_password',
             'password' => 'short',
             'password_confirmation' => 'short'
         ]);
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors('password');
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors('password');
     }
 }
