@@ -8,6 +8,17 @@ use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
+
+    public function index()
+    {
+        return view('users.index', ['users' => User::all()->toArray()]);
+    }
+
+    public function show(User $user)
+    {
+        return view('users.show', ['user' => $user->toArray()]);
+    }
+
     public function store()
     {
         request()->validate([
@@ -32,6 +43,8 @@ class UsersController extends Controller
         ]);
 
         $user->update(request()->only('name', 'email'));
+
+        return $user->fresh()->toArray();
     }
 
     public function delete(User $user)

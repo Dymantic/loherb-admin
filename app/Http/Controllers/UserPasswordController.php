@@ -14,5 +14,7 @@ class UserPasswordController extends Controller
             'password' => ['required', 'confirmed', 'min:6']
         ]);
         auth()->user()->resetPassword(request('password'));
+
+        return redirect("/");
     }
 }

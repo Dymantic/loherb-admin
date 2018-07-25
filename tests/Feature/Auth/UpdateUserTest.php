@@ -33,6 +33,24 @@ class UpdateUserTest extends TestCase
     /**
      *@test
      */
+    public function updating_a_user_responds_with_fresh_user_data()
+    {
+        $this->withoutExceptionHandling();
+
+        $old_data = ['name' => 'Old name', 'email' => 'old@email.test'];
+        $new_data = ['name' => 'New name', 'email' => 'new@email.test'];
+
+        $user = factory(User::class)->create($old_data);
+
+        $response = $this->asLoggedInUser()->json("POST", "/users/{$user->id}", $new_data);
+        $response->assertStatus(200);
+
+        $this->assertEquals($user->fresh()->toArray(), $response->decodeResponseJson());
+    }
+
+    /**
+     *@test
+     */
     public function the_name_may_change_and_the_email_remains_the_same()
     {
         $this->withoutExceptionHandling();
