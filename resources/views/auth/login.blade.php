@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="h-screen flex justify-center items-center">
-        <div class="max-w-md mx-auto p-4">
+        <div class="max-w-md w-full mx-auto p-4">
             <h1 class="mb-8 text-center">Loherb Admin</h1>
             <p class="text-xl text-center">Please login</p>
-            <form action="/login" method="POST" class="max-w-sm mx-auto my-8">
+            <form action="/login" method="POST" class="max-w-xs mx-auto my-8">
                 {!! csrf_field() !!}
                 <div class="my-4 {{ $errors->has('email') ? ' has-error' : '' }}">
                     <label class="text-sm font-bold" for="email">Email</label>

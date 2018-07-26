@@ -31,8 +31,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::view('reset-password', 'auth.reset-password');
     Route::post('reset-password', 'UserPasswordController@update');
 
+    Route::get('blog', 'Blog\PostsController@index');
     Route::post('blog/posts', 'Blog\PostsController@store');
     Route::post('blog/posts/{post}', 'Blog\PostsController@update');
+});
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Service', 'prefix' => 'api'], function() {
+   Route::get('blog/posts', 'PostsController@index');
 });
 
 

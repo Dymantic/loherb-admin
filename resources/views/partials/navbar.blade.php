@@ -5,6 +5,7 @@
         </a>
     </div>
     <div class="flex items-center justify-end">
+        <a href="/blog" class="text-white no-underline mr-4">Blog</a>
         <a href="/users" class="text-white no-underline mr-4">Users</a>
         <dropdown-item v-cloak name="{{ Auth()->user()->email }}" class="text-white h-12 flex items-center">
             <div slot="dropdown_content" class="pt-3">

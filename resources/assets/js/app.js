@@ -10,9 +10,13 @@ require('./bootstrap');
 import Vue from "vue";
 import {VueForm} from "@dymantic/vue-forms";
 import {Dropdown, Modal, DeleteModal, Toggleswitch} from "@dymantic/vuetilities";
+
 import UserPage from "./components/UserPage";
 import UserForm from "./components/UserForm";
 import UsersIndex from "./components/UsersIndex";
+
+import BlogIndex from "./components/BlogIndex";
+import NewPostForm from "./components/NewPostForm";
 
 Vue.component('dropdown-item', Dropdown);
 Vue.component('vue-form', VueForm);
@@ -22,6 +26,8 @@ Vue.component('toggle-switch', Toggleswitch);
 Vue.component('user-page', UserPage);
 Vue.component('user-form', UserForm);
 Vue.component('users-index', UsersIndex);
+Vue.component('blog-index', BlogIndex);
+Vue.component('new-post-form', NewPostForm);
 
 
 
