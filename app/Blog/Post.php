@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasTranslations;
 
-    public $translatable = ['title', 'intro', 'description'];
+    public $translatable = ['title', 'intro', 'description', 'body'];
 
-    protected $fillable = ['title', 'intro', 'description'];
+    protected $fillable = ['title', 'intro', 'description', 'body'];
 }

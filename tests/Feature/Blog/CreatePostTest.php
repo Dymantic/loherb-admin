@@ -46,6 +46,30 @@ class CreatePostTest extends TestCase
     /**
      *@test
      */
+    public function a_post_may_be_created_with_more_than_one_language()
+    {
+        $this->withoutExceptionHandling();
+        $post_data = [
+            'title' => ['en' => 'Test Title', 'zh' => '満版復'],
+            'description' => ['en' => 'Test Description', 'zh' => '永門義会可際査別件村約候証民'],
+            'intro' => ['en' => 'Test Intro', 'zh' => '永門義会可際査別件村約候証民'],
+            'body' => ['en' => 'Test body', '永門義会可際査別件村約候証民。昌原集前全者波有索男討家王合考作染美最。催優際田度読賞督密出将育別容']
+        ];
+
+        $response = $this->asLoggedInUser()->json("POST", "blog/posts", $post_data);
+        $response->assertStatus(200);
+
+        $this->assertDatabaseHasWithTranslations('posts', [
+            'title' => ['en' => 'Test Title', 'zh' => '満版復'],
+            'description' => ['en' => 'Test Description', 'zh' => '永門義会可際査別件村約候証民'],
+            'intro' => ['en' => 'Test Intro', 'zh' => '永門義会可際査別件村約候証民'],
+            'body' => ['en' => 'Test body', '永門義会可際査別件村約候証民。昌原集前全者波有索男討家王合考作染美最。催優際田度読賞督密出将育別容']
+        ]);
+    }
+
+    /**
+     *@test
+     */
     public function creating_a_post_responds_with_post_data()
     {
         $this->withoutExceptionHandling();
@@ -103,6 +127,18 @@ class CreatePostTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $response->assertJsonValidationErrors('title.en');
+        $response->assertJsonValidationErrors('title');
+    }
+
+    /**
+     *@test
+     */
+    public function a_post_only_needs_one_title_lang_to_valid()
+    {
+        $this->withoutExceptionHandling();
+        $response = $this->asLoggedInUser()->json("POST", "blog/posts", [
+            'title' => ['en' => 'test title', 'zh' => '']
+        ]);
+        $response->assertStatus(200);
     }
 }

@@ -16,7 +16,7 @@
           CONTENT="NOINDEX, NOFOLLOW">
     @yield('head')
 </head>
-<body>
+<body class="{{ $pageClasses ?? '' }} text-black font-sans">
 <div id="app">
     @if(Auth::check())
         @include('partials.navbar')

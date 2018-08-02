@@ -6337,6 +6337,14 @@ table {
   width: 16rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
+.w-100 {
+  width: 25rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -6437,6 +6445,10 @@ svg {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.not-contained .container {
+  max-width: 100%;
 }
 
 @media (min-width: 576px) {
@@ -12074,6 +12086,14 @@ svg {
 
   .sm\:w-64 {
     width: 16rem;
+  }
+
+  .sm\:w-80 {
+    width: 20rem;
+  }
+
+  .sm\:w-100 {
+    width: 25rem;
   }
 
   .sm\:w-auto {
@@ -17802,6 +17822,14 @@ svg {
     width: 16rem;
   }
 
+  .md\:w-80 {
+    width: 20rem;
+  }
+
+  .md\:w-100 {
+    width: 25rem;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -23528,6 +23556,14 @@ svg {
     width: 16rem;
   }
 
+  .lg\:w-80 {
+    width: 20rem;
+  }
+
+  .lg\:w-100 {
+    width: 25rem;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -29252,6 +29288,14 @@ svg {
 
   .xl\:w-64 {
     width: 16rem;
+  }
+
+  .xl\:w-80 {
+    width: 20rem;
+  }
+
+  .xl\:w-100 {
+    width: 25rem;
   }
 
   .xl\:w-auto {

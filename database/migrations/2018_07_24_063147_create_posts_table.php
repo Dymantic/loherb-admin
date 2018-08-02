@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->json('title');
             $table->json('description');
             $table->json('intro');
+            $table->json('body');
             $table->timestamps();
         });
     }

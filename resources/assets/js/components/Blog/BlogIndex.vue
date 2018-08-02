@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center mt-4 mb-12">
             <h1 class="text-4xl font-sans text-grey-darkest normal">Blog Posts</h1>
             <div class="flex justify-end items-center">
-                <new-post-form></new-post-form>
+                <a class="btn btn-primary no-underline" href="/blog/edit">Add Post</a>
             </div>
         </div>
         <div class="flex justify-between my-8 max-w-lg mx-auto">

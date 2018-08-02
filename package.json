@@ -23,6 +23,8 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "@dymantic/imagineer": "^0.1.1",
+        "@dymantic/trix-vue-wysiwyg": "^0.1.0",
         "@dymantic/vue-forms": "^0.2.6",
         "@dymantic/vuetilities": "^0.3.3"
     }
