@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center mt-4 mb-12">
             <h1 class="text-4xl font-sans text-grey-darkest normal">Blog Posts</h1>
             <div class="flex justify-end items-center">
-                <a class="btn btn-primary no-underline" href="/blog/edit">Add Post</a>
+                <new-post-form></new-post-form>
             </div>
         </div>
         <div class="flex justify-between my-8 max-w-lg mx-auto">
@@ -13,7 +13,10 @@
         </div>
         <div class="bg-grey-lightest max-w-lg mx-auto shadow rounded mb-8">
             <div class="p-4 border-b border-grey-light" v-for="post in posts" :key="post.id">
-                <p class="my-4 font-bold">{{ showTitle(post) }}</p>
+                <a :href="`/blog/posts/${post.id}/edit`"
+                   class="no-underline hover:underline text-black">
+                    <p class="my-4 font-bold">{{ showTitle(post) }}</p>
+                </a>
             </div>
         </div>
     </div>

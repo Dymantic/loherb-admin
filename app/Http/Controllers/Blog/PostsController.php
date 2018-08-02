@@ -25,6 +25,11 @@ class PostsController extends Controller
         return $post->toArray();
     }
 
+    public function edit(Post $post)
+    {
+        return view('blog.edit', ['post_id' => $post->id]);
+    }
+
     public function store()
     {
         request()->validate([

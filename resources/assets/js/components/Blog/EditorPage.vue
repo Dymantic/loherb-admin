@@ -89,7 +89,7 @@
         },
 
         mounted() {
-            if(this.postId) {
+            if (this.postId) {
                 postRepo.fetch(this.postId)
                         .then(post => this.post = post)
                         .catch(err => console.log(err));
@@ -102,10 +102,7 @@
             },
 
             savePost() {
-                this.post.id
-                    ? postRepo.update(this.post).catch(err => console.log(err))
-                    : postRepo.create(this.post).then(postId => this.post.id = postId).catch(err => console.log(err));
-
+                postRepo.save(this.post).catch(err => console.log(err));
             }
         }
     }

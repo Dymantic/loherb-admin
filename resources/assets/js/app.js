@@ -17,6 +17,7 @@ import UsersIndex from "./components/Users/UsersIndex";
 
 import BlogIndex from "./components/Blog/BlogIndex";
 import EditorPage from "./components/Blog/EditorPage";
+import NewPostForm from "./components/Blog/NewPostForm";
 
 Vue.component('dropdown-item', Dropdown);
 Vue.component('vue-form', VueForm);
@@ -27,6 +28,7 @@ Vue.component('user-page', UserPage);
 Vue.component('user-form', UserForm);
 Vue.component('users-index', UsersIndex);
 Vue.component('blog-index', BlogIndex);
+Vue.component('new-post-form', NewPostForm);
 Vue.component('editor-page', EditorPage);
 
 
