@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('blog/posts/{post}', 'Blog\PostsController@show');
     Route::post('blog/posts', 'Blog\PostsController@store');
     Route::post('blog/posts/{post}', 'Blog\PostsController@update');
+
+    Route::post('blog/posts/{post}/title-image', 'Blog\PostTitleImageController@store');
 });
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Service', 'prefix' => 'api'], function() {
