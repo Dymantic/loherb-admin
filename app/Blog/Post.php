@@ -16,4 +16,9 @@ class Post extends Model implements HasMedia
     public $translatable = ['title', 'intro', 'description', 'body'];
 
     protected $fillable = ['title', 'intro', 'description', 'body'];
+
+    public function setTitleImage($file)
+    {
+        return $this->addMedia($file)->preservingOriginal()->toMediaCollection(static::TITLE_IMAGES);
+    }
 }

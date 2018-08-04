@@ -10,6 +10,6 @@ class PostTitleImageController extends Controller
 {
     public function store(Post $post)
     {
-
+        $image = $post->setTitleImage(request('image'));
     }
 }
