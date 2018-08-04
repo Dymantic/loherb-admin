@@ -1,8 +1,8 @@
 <template>
     <span>
         <button @click="showForm = true" class="btn btn-primary">Add Post</button>
-        <modal :show="showForm">
-            <div slot="body" class="border-t-4 border-black max-w-md mx-auto">
+        <modal :show="showForm" @close="showForm = false">
+            <div class="border-t-4 border-black max-w-md mx-auto px-4 pb-4">
                 <h3 class="my-4">Create a new blog post</h3>
                 <p>To get started you need to give your post a title. This can be changed later.</p>
                 <vue-form url="/blog/posts" :form-attributes="post" @submission-okay="postCreated" button-classes="btn btn-primary">

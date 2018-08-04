@@ -9,7 +9,8 @@ require('./bootstrap');
 
 import Vue from "vue";
 import {VueForm} from "@dymantic/vue-forms";
-import {Dropdown, Modal, DeleteModal, Toggleswitch} from "@dymantic/vuetilities";
+import {Dropdown, DeleteModal, Toggleswitch} from "@dymantic/vuetilities";
+import Modal from "@dymantic/modal";
 
 import UserPage from "./components/Users/UserPage";
 import UserForm from "./components/Users/UserForm";
