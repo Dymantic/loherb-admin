@@ -10,6 +10,9 @@ class PostTitleImageController extends Controller
 {
     public function store(Post $post)
     {
+        request()->validate(['image' => ['required', 'image']]);
         $image = $post->setTitleImage(request('image'));
+
+        return ['image_src' => $image->getUrl()];
     }
 }
