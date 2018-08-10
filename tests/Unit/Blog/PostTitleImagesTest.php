@@ -31,6 +31,37 @@ class PostTitleImagesTest extends TestCase
     /**
      *@test
      */
+    public function setting_a_new_title_image_will_replace_any_existing_one()
+    {
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+        $imageA = $post->setTitleImage(UploadedFile::fake()->image('testpic.png'));
+        $imageB = $post->setTitleImage(UploadedFile::fake()->image('testpic_two.png'));
+
+        $this->assertCount(1, $post->fresh()->getMedia(Post::TITLE_IMAGES));
+        $this->assertTrue($post->fresh()->getFirstMedia(Post::TITLE_IMAGES)->is($imageB));
+    }
+
+    /**
+     *@test
+     */
+    public function the_title_image_can_be_cleared()
+    {
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+        $post->setTitleImage(UploadedFile::fake()->image('testpic.png'));
+        $this->assertCount(1, $post->fresh()->getMedia(Post::TITLE_IMAGES));
+
+        $post->fresh()->clearTitleImage();
+
+        $this->assertCount(0, $post->fresh()->getMedia(Post::TITLE_IMAGES));
+    }
+
+    /**
+     *@test
+     */
     public function a_post_tile_image_has_a_banner_conversion()
     {
         Storage::fake('media');
