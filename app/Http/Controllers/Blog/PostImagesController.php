@@ -11,6 +11,8 @@ class PostImagesController extends Controller
     public function store(Post $post)
     {
         request()->validate(['image' => ['required', 'image']]);
-        $post->attachImage(request('image'));
+        $image = $post->attachImage(request('image'));
+
+        return ['url' => $image->getUrl('web')];
     }
 }

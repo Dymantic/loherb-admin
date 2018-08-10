@@ -35,6 +35,25 @@ class BlogPostImageTest extends TestCase
     /**
      *@test
      */
+    public function successfully_attaching_a_post_responds_with_the_url()
+    {
+        $this->withoutExceptionHandling();
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+
+        $response = $this->asLoggedInUser()->json("POST", "/blog/posts/{$post->id}/images", [
+            'image' => UploadedFile::fake()->image('testpic.png')
+        ]);
+        $response->assertStatus(200);
+        $image = $post->fresh()->getFirstMedia(Post::BODY_IMAGES);
+
+        $this->assertEquals($image->getUrl('web'), $response->decodeResponseJson('url'));
+    }
+
+    /**
+     *@test
+     */
     public function the_image_is_required()
     {
         Storage::fake('media');
