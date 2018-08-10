@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('blog/posts/{post}', 'Blog\PostsController@update');
 
     Route::post('blog/posts/{post}/title-image', 'Blog\PostTitleImageController@store');
+
+    Route::post('blog/posts/{post}/images', 'Blog\PostImagesController@store');
 });
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Service', 'prefix' => 'api'], function() {
