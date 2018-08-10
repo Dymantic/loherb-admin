@@ -27,4 +27,30 @@ class PostTitleImagesTest extends TestCase
         $this->assertInstanceOf(Media::class, $image);
         $this->assertTrue($image->model->is($post));
     }
+
+    /**
+     *@test
+     */
+    public function a_post_tile_image_has_a_banner_conversion()
+    {
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+        $image = $post->setTitleImage(UploadedFile::fake()->image('testpic.png'));
+
+        $this->assertTrue($image->fresh()->hasGeneratedConversion('banner'));
+    }
+
+    /**
+     *@test
+     */
+    public function a_post_title_image_has_a_web_conversion()
+    {
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+        $image = $post->setTitleImage(UploadedFile::fake()->image('testpic.png'));
+
+        $this->assertTrue($image->fresh()->hasGeneratedConversion('web'));
+    }
 }
