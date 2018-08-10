@@ -40,6 +40,6 @@ trait PostImagesTrait
              ->fit(Manipulations::FIT_MAX, 1200, 800)
              ->keepOriginalImageFormat()
              ->optimize()
-             ->performOnCollections(static::TITLE_IMAGES);
+             ->performOnCollections(static::TITLE_IMAGES, static::BODY_IMAGES);
     }
 }

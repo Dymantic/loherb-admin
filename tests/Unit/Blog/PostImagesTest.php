@@ -28,4 +28,17 @@ class PostImagesTest extends TestCase
         $this->assertInstanceOf(Media::class, $image);
         $this->assertTrue($post->fresh()->getFirstMedia(Post::BODY_IMAGES)->is($image));
     }
+
+    /**
+     *@test
+     */
+    public function an_post_image_has_a_web_conversion()
+    {
+        Storage::fake('media');
+
+        $post = factory(Post::class)->create();
+        $image = $post->attachImage(UploadedFile::fake()->image('testpic.png'));
+
+        $this->assertTrue($image->fresh()->hasGeneratedConversion('web'));
+    }
 }
