@@ -5,7 +5,7 @@
             <div class="border-t-4 border-black max-w-md mx-auto px-4 pb-4">
                 <h3 class="my-4">Create a new blog post</h3>
                 <p>To get started you need to give your post a title. This can be changed later.</p>
-                <vue-form url="/blog/posts" :form-attributes="post" @submission-okay="postCreated" button-classes="btn btn-primary">
+                <vue-form url="/multilingual-posts/posts" :form-attributes="post" @submission-okay="postCreated" button-classes="btn btn-primary">
                     <div slot="form-body" slot-scope="{formData, formErrors}">
                         <div class="form-group my-3" :class="{'has-error': formErrors.title}"  v-if="lang === 'en'">
                             <label class="text-xs uppercase text-black font-bold" for="title_en">Title</label>
@@ -33,24 +33,23 @@
 </template>
 
 <script type="text/babel">
-    import {Form} from "@dymantic/vue-forms";
-    export default {
-        data() {
-            return {
-                post: new Form({title: {en: "", zh: ""}}),
-                showForm: false,
-                lang: 'en'
-            };
-        },
+import { Form } from "@dymantic/vue-forms";
+export default {
+  data() {
+    return {
+      post: new Form({ title: { en: "", zh: "" } }),
+      showForm: false,
+      lang: "en"
+    };
+  },
 
-        methods: {
-            postCreated({id}) {
-                window.location = `/blog/posts/${id}/edit`;
-            }
-        }
+  methods: {
+    postCreated({ id }) {
+      window.location = `/blog/posts/${id}/edit`;
     }
+  }
+};
 </script>
 
 <style scoped lang="less" type="text/scss">
-
 </style>

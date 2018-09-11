@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::view('login', 'auth.login')->name('login');
 Route::post('login', 'Auth\LoginController@login');
+
+Route::view('trix', 'trixtest');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::view('/', 'dashboard');

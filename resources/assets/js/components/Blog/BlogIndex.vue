@@ -23,57 +23,55 @@
 </template>
 
 <script type="text/babel">
-    export default {
-        props: ['post-list', 'page', 'total-pages'],
+export default {
+  props: ["post-list", "page", "total-pages"],
 
-        data() {
-            return {
-                lang: 'en',
-                posts: [],
-                current_page: 1
-            };
-        },
+  data() {
+    return {
+      lang: "en",
+      posts: [],
+      current_page: 1
+    };
+  },
 
-        mounted() {
-          this.posts = this.postList;
-          this.current_page = this.page
-        },
+  mounted() {
+    this.posts = this.postList;
+    this.current_page = this.page;
+  },
 
-        methods: {
-            showTitle(post) {
-                if(post.title[this.lang]) {
-                    return post.title[this.lang];
-                }
+  methods: {
+    showTitle(post) {
+      if (post.title[this.lang]) {
+        return post.title[this.lang];
+      }
 
-                const lang = Object.keys(post.title).find(lang => post[lang] !== "");
-                return post.title[lang];
-            },
+      const lang = Object.keys(post.title).find(lang => post[lang] !== "");
+      return post.title[lang];
+    },
 
-            getNextPage() {
-                if(this.current_page === this.totalPages) {
-                    return;
-                }
-                this.getPage(this.current_page + 1);
-            },
+    getNextPage() {
+      if (this.current_page === this.totalPages) {
+        return;
+      }
+      this.getPage(this.current_page + 1);
+    },
 
-            getPrevPage() {
-                if(this.current_page === 1) {
-                    return;
-                }
-                this.getPage(this.current_page - 1);
-            },
+    getPrevPage() {
+      if (this.current_page === 1) {
+        return;
+      }
+      this.getPage(this.current_page - 1);
+    },
 
-            getPage(page) {
-                axios.get(`/api/blog/posts?page=${page}`)
-                     .then(({data}) => {
-                         this.posts = data.posts;
-                         this.current_page = data.page;
-                     });
-            }
-        }
+    getPage(page) {
+      axios.get(`/multilingual-posts/posts?page=${page}`).then(({ data }) => {
+        this.posts = data.data;
+        this.current_page = data.meta.current_page;
+      });
     }
+  }
+};
 </script>
 
 <style scoped lang="scss" type="text/scss">
-
 </style>
