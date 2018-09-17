@@ -3908,6 +3908,10 @@ table {
   min-height: 0;
 }
 
+.min-h-100 {
+  min-height: 25rem;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -9675,6 +9679,10 @@ svg {
     min-height: 0;
   }
 
+  .sm\:min-h-100 {
+    min-height: 25rem;
+  }
+
   .sm\:min-h-full {
     min-height: 100%;
   }
@@ -15407,6 +15415,10 @@ svg {
 
   .md\:min-h-0 {
     min-height: 0;
+  }
+
+  .md\:min-h-100 {
+    min-height: 25rem;
   }
 
   .md\:min-h-full {
@@ -21143,6 +21155,10 @@ svg {
     min-height: 0;
   }
 
+  .lg\:min-h-100 {
+    min-height: 25rem;
+  }
+
   .lg\:min-h-full {
     min-height: 100%;
   }
@@ -26875,6 +26891,10 @@ svg {
 
   .xl\:min-h-0 {
     min-height: 0;
+  }
+
+  .xl\:min-h-100 {
+    min-height: 25rem;
   }
 
   .xl\:min-h-full {

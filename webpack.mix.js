@@ -17,5 +17,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
         postCss: [
             tailwindcss('./tailwind.js')
         ]
-    }).webpackConfig({ resolve: { symlinks: false } })
+    })
    .version();

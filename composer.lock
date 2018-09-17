@@ -343,7 +343,7 @@
             "source": {
                 "type": "git",
                 "url": "/Users/mooz/work/multilingual-posts",
-                "reference": "72efc7a40cac5c4b38ee615be832e8711ce40f02"
+                "reference": "3fd275e19565944bdec99ae42001e9e81bf42f5e"
             },
             "require": {
                 "cviebrock/eloquent-sluggable": "^4.5",
@@ -381,7 +381,7 @@
                 }
             ],
             "description": "Laravel Model and helpers for multilingual posts",
-            "time": "2018-09-10T03:22:24+00:00"
+            "time": "2018-09-13T03:21:34+00:00"
         },
         {
             "name": "egulias/email-validator",

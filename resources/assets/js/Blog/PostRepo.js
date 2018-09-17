@@ -1,12 +1,17 @@
 import axios from "axios";
 import { Post } from "./Post";
+import { postProxyHandler } from "./PostProxyHandler";
 
 const postRepo = {
     fetch(postId) {
         return new Promise((resolve, reject) => {
             axios
                 .get(`/multilingual-posts/posts/${postId}`)
-                .then(({ data }) => resolve(new Post(data)))
+                .then(({ data }) => {
+                    let post = new Post(data);
+                    let proxy = new Proxy(post, postProxyHandler);
+                    resolve(proxy);
+                })
                 .catch(err => reject(err.response));
         });
     },
