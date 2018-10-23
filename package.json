@@ -28,6 +28,7 @@
         "@dymantic/vue-forms": "^0.2.6",
         "@dymantic/vue-trix-editor": "^0.1.6",
         "@dymantic/vuetilities": "^0.3.3",
+        "imagemin-pngquant": "5.0.1",
         "vuejs-datepicker": "^1.5.3"
     }
 }
