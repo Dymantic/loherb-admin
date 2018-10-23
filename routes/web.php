@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/instagram', function () {
+    $p = \Dymantic\InstagramFeed\Profile::first();
+    return $p->getInstagramAuthUrl();
+});
+
 
 Route::view('login', 'auth.login')->name('login');
 Route::post('login', 'Auth\LoginController@login');

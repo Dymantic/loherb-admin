@@ -48,7 +48,16 @@ let colors = {
     'danger': '#cc1f1a',
     'danger-dark': '#cc1f1a',
 
-    'black': '#22292f',
+    'green_main': '#084137',
+    'green_soft': '#daede7',
+    'green_mid': '#abd5c7',
+    'cream_dark': '#d7c7ba',
+    'cream_light': '#fef4f2',
+    'brown_dark': '#917661',
+    'brown_light': '#eac49f',
+    'gold': '#e49e2a',
+
+    'black': '#2e302d',
     'grey-darkest': '#3d4852',
     'grey-darker': '#606f7b',
     'grey-dark': '#8795a1',

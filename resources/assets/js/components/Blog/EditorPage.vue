@@ -41,41 +41,15 @@
                          v-if="post.category_id">
                         <p class="font-bold text-xs uppercase tracking-wide">Category</p>
                         <div class="flex flex-wrap justify-around">
-                            <label for="cuisine"
+                            <label v-for="category in categories"
+                                   :for="category.slug"
                                    class="w-2/5 my-2">
-                                <input :value="1"
+                                <input :value="category.id"
                                        v-model="post.category_id"
-                                       id="cuisine"
+                                       :id="category.slug"
                                        type="checkbox"
                                        class="hidden">
-                                <span class="psuedo-check-label">Cuisine</span>
-                            </label>
-                            <label for="estate"
-                                   class="w-2/5 my-2">
-                                <input :value="4"
-                                       v-model="post.category_id"
-                                       id="estate"
-                                       type="checkbox"
-                                       class="hidden">
-                                <span class="psuedo-check-label">Estate</span>
-                            </label>
-                            <label for="biotech"
-                                   class="w-2/5 my-2">
-                                <input :value="2"
-                                       v-model="post.category_id"
-                                       id="biotech"
-                                       type="checkbox"
-                                       class="hidden">
-                                <span class="psuedo-check-label">Biotech</span>
-                            </label>
-                            <label for="villa"
-                                   class="w-2/5 my-2">
-                                <input :value="3"
-                                       v-model="post.category_id"
-                                       id="villa"
-                                       type="checkbox"
-                                       class="hidden">
-                                <span class="psuedo-check-label">Villa</span>
+                                <span class="psuedo-check-label">{{ category.title }}</span>
                             </label>
                         </div>
                     </div>
@@ -137,7 +111,7 @@
     import BusyButton from "../BusyButton";
 
     export default {
-        props: ["post-id"],
+        props: ["post-id", 'categories'],
         components: {
             Wysiwyg,
             ImageUpload,

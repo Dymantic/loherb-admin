@@ -16054,32 +16054,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -16089,7 +16063,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ["post-id"],
+    props: ["post-id", 'categories'],
     components: {
         Wysiwyg: __WEBPACK_IMPORTED_MODULE_0__dymantic_vue_trix_editor___default.a,
         ImageUpload: __WEBPACK_IMPORTED_MODULE_1__dymantic_imagineer__["ImageUpload"],
@@ -18568,12 +18542,12 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: "flex flex-wrap justify-around" },
-                      [
-                        _c(
+                      _vm._l(_vm.categories, function(category) {
+                        return _c(
                           "label",
                           {
                             staticClass: "w-2/5 my-2",
-                            attrs: { for: "cuisine" }
+                            attrs: { for: category.slug }
                           },
                           [
                             _c("input", {
@@ -18586,11 +18560,12 @@ var render = function() {
                                 }
                               ],
                               staticClass: "hidden",
-                              attrs: { id: "cuisine", type: "checkbox" },
+                              attrs: { id: category.slug, type: "checkbox" },
                               domProps: {
-                                value: 1,
+                                value: category.id,
                                 checked: Array.isArray(_vm.post.category_id)
-                                  ? _vm._i(_vm.post.category_id, 1) > -1
+                                  ? _vm._i(_vm.post.category_id, category.id) >
+                                    -1
                                   : _vm.post.category_id
                               },
                               on: {
@@ -18599,7 +18574,7 @@ var render = function() {
                                     $$el = $event.target,
                                     $$c = $$el.checked ? true : false
                                   if (Array.isArray($$a)) {
-                                    var $$v = 1,
+                                    var $$v = category.id,
                                       $$i = _vm._i($$a, $$v)
                                     if ($$el.checked) {
                                       $$i < 0 &&
@@ -18626,197 +18601,11 @@ var render = function() {
                             }),
                             _vm._v(" "),
                             _c("span", { staticClass: "psuedo-check-label" }, [
-                              _vm._v("Cuisine")
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "w-2/5 my-2",
-                            attrs: { for: "estate" }
-                          },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.post.category_id,
-                                  expression: "post.category_id"
-                                }
-                              ],
-                              staticClass: "hidden",
-                              attrs: { id: "estate", type: "checkbox" },
-                              domProps: {
-                                value: 4,
-                                checked: Array.isArray(_vm.post.category_id)
-                                  ? _vm._i(_vm.post.category_id, 4) > -1
-                                  : _vm.post.category_id
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a = _vm.post.category_id,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = 4,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(_vm.post, "category_id", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "psuedo-check-label" }, [
-                              _vm._v("Estate")
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "w-2/5 my-2",
-                            attrs: { for: "biotech" }
-                          },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.post.category_id,
-                                  expression: "post.category_id"
-                                }
-                              ],
-                              staticClass: "hidden",
-                              attrs: { id: "biotech", type: "checkbox" },
-                              domProps: {
-                                value: 2,
-                                checked: Array.isArray(_vm.post.category_id)
-                                  ? _vm._i(_vm.post.category_id, 2) > -1
-                                  : _vm.post.category_id
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a = _vm.post.category_id,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = 2,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(_vm.post, "category_id", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "psuedo-check-label" }, [
-                              _vm._v("Biotech")
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "label",
-                          {
-                            staticClass: "w-2/5 my-2",
-                            attrs: { for: "villa" }
-                          },
-                          [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.post.category_id,
-                                  expression: "post.category_id"
-                                }
-                              ],
-                              staticClass: "hidden",
-                              attrs: { id: "villa", type: "checkbox" },
-                              domProps: {
-                                value: 3,
-                                checked: Array.isArray(_vm.post.category_id)
-                                  ? _vm._i(_vm.post.category_id, 3) > -1
-                                  : _vm.post.category_id
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a = _vm.post.category_id,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = 3,
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.post,
-                                          "category_id",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(_vm.post, "category_id", $$c)
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "psuedo-check-label" }, [
-                              _vm._v("Villa")
+                              _vm._v(_vm._s(category.title))
                             ])
                           ]
                         )
-                      ]
+                      })
                     )
                   ])
                 : _vm._e(),

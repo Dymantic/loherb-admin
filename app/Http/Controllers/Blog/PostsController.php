@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog;
 
+use Dymantic\MultilingualPosts\Category;
 use Dymantic\MultilingualPosts\Post;
 use Dymantic\MultilingualPosts\PostResource;
 use App\Rules\RequiresOne;
@@ -25,7 +26,14 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        return view('blog.edit', ['post_id' => $post->id]);
+        $categories = Category::all()->map(function($category) {
+            return [
+                'id' => $category->id,
+                'slug' => $category->slug,
+                'title' => $category->getTranslation('title', 'en')
+            ];
+        })->all();
+        return view('blog.edit', ['post_id' => $post->id, 'categories' => $categories]);
     }
     
 }
