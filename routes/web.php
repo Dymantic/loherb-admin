@@ -11,24 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/instagram', function () {
-    $p = \Dymantic\InstagramFeed\Profile::first();
-    return $p->getInstagramAuthUrl();
-});
-
 
 Route::view('login', 'auth.login')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 
-Route::view('trix', 'trixtest');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::view('/', 'dashboard');
+    Route::get('/', 'DashboardController@show');
     Route::post('logout', 'Auth\LoginController@logout');
 
     Route::get('users', 'UsersController@index');
@@ -49,6 +38,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('blog/posts/{post}/title-image', 'Blog\PostTitleImageController@store');
 
     Route::post('blog/posts/{post}/images', 'Blog\PostImagesController@store');
+
+    Route::get('instagram-feed-status', 'InstagramFeedStatusController@show');
+
+    Route::redirect('instagram-auth-success', '/');
 });
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Service', 'prefix' => 'api'], function() {

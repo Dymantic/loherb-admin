@@ -16382,11 +16382,141 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            checked: false,
+            has_access: false,
+            auth_url: '',
+            media: [],
+            waiting: true
+        };
+    },
+
+
+    computed: {
+        all_good: function all_good() {
+            return this.checked && this.has_access;
+        },
+        bad_token: function bad_token() {
+            return this.checked && !this.has_access;
+        }
+    },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/instagram-feed-status').then(function (_ref) {
+            var data = _ref.data;
+            return _this.setData(data);
+        }).catch(function () {
+            return console.log('oh hell');
+        });
+    },
+
+    methods: {
+        setData: function setData(_ref2) {
+            var checked = _ref2.checked,
+                has_access = _ref2.has_access,
+                media = _ref2.media,
+                auth_url = _ref2.auth_url;
+
+            this.waiting = false;
+            this.checked = checked;
+            this.has_access = has_access;
+            this.media = media;
+            this.auth_url = auth_url;
+        }
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Users/UserForm.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16707,6 +16837,21 @@ exports.push([module.i, "\n.waiting-state > div[data-v-95e552fc] {\n  width: .5r
 /***/ }),
 
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d5c2b830\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Users/UsersIndex.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
@@ -17790,11 +17935,7 @@ var render = function() {
       _c("modal", { attrs: { show: _vm.showForm } }, [
         _c(
           "div",
-          {
-            staticClass: "border-t-4 border-black",
-            attrs: { slot: "body" },
-            slot: "body"
-          },
+          { staticClass: "border-t-4 border-black p-8" },
           [
             _c(
               "vue-form",
@@ -18967,6 +19108,147 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d68932bc\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "bg-grey-lightest p-8 shadow max-w-md mx-auto mt-16" },
+    [
+      _vm.waiting
+        ? _c("p", [_vm._v("Checking feed, please wait...")])
+        : _c("div", [
+            _vm.all_good
+              ? _c("div", [
+                  _c("p", { staticClass: "text-lg text-blue font-bold mb-8" }, [
+                    _vm._v("All good!")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Your Instagram feed is connected. Here are your latest posts. The sites will only update daily."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex flex-wrap mt-12" },
+                    _vm._l(_vm.media, function(image) {
+                      return _c("img", {
+                        staticClass: "h-32 w-32 object-cover block m-2",
+                        attrs: { src: image.low, alt: "" }
+                      })
+                    })
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.checked
+              ? _c("div", [
+                  _c("p", { staticClass: "text-lg text-red font-bold mb-8" }, [
+                    _vm._v("Oh Dear!")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "There was a problem checking your Instagram feed. This might be a temporary problem, or a problem with Instagram. You can try re-authorise, and if there are still problems, just try again later."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "btn btn-primary font-bold no-underline mt-8",
+                      attrs: { href: _vm.auth_url }
+                    },
+                    [_vm._v("Re-authorise")]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.bad_token
+              ? _c("div", [
+                  _c("p", { staticClass: "text-lg text-red font-bold mb-8" }, [
+                    _vm._v("Oh Dear!")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Your instagram token is now invalid. Please use the button below to re-authorise your account."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "btn btn-primary font-bold no-underline mt-8",
+                      attrs: { href: _vm.auth_url }
+                    },
+                    [_vm._v("Re-authorise")]
+                  )
+                ])
+              : _vm._e()
+          ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "p-8 mb-12" }, [
+      _c(
+        "p",
+        { staticClass: "text-sm uppercase font-bold tracking-wide mb-4" },
+        [_vm._v("Note:")]
+      ),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "If the problem does not go away, please contact Dymantic Design."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "p-8 mb-12" }, [
+      _c(
+        "p",
+        { staticClass: "text-sm uppercase font-bold tracking-wide mb-4" },
+        [_vm._v("Note:")]
+      ),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("Make sure you are logged in to the correct instagram account.")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d68932bc", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1078ba90\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Users/UserPage.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19200,6 +19482,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d5c2b830\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersIndex.vue", function() {
      var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d5c2b830\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./UsersIndex.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("f0a73826", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckFeed.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckFeed.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32139,6 +32448,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Blog_EditorPage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Blog_EditorPage__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Blog_NewPostForm__ = __webpack_require__("./resources/assets/js/components/Blog/NewPostForm.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Blog_NewPostForm___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Blog_NewPostForm__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Instagram_CheckFeed__ = __webpack_require__("./resources/assets/js/components/Instagram/CheckFeed.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Instagram_CheckFeed___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Instagram_CheckFeed__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -32146,6 +32457,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
+
+
 
 
 
@@ -32171,9 +32484,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("users-index", __WEBPACK_I
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("blog-index", __WEBPACK_IMPORTED_MODULE_7__components_Blog_BlogIndex___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("new-post-form", __WEBPACK_IMPORTED_MODULE_9__components_Blog_NewPostForm___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("editor-page", __WEBPACK_IMPORTED_MODULE_8__components_Blog_EditorPage___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component("check-instagram-feed", __WEBPACK_IMPORTED_MODULE_10__components_Instagram_CheckFeed___default.a);
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.ignoredElements = ['trix-editor'];
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-  el: "#app"
+    el: "#app"
 });
 
 /***/ }),
@@ -32502,6 +32818,58 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-95e552fc", Component.options)
   } else {
     hotAPI.reload("data-v-95e552fc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/Instagram/CheckFeed.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d68932bc\",\"scoped\":true,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-d68932bc\",\"hasScoped\":true,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Instagram/CheckFeed.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-d68932bc"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Instagram/CheckFeed.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d68932bc", Component.options)
+  } else {
+    hotAPI.reload("data-v-d68932bc", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
