@@ -1,6 +1,6 @@
 <div class="h-12 bg-black w-full flex justify-between items-center px-4 shadow">
     <div>
-        <a href="/admin" class="text-2xl antialiased text-white no-underline">
+        <a href="/" class="text-2xl antialiased text-white no-underline">
             <span class="font-light">Loherb</span>
         </a>
     </div>
