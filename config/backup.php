@@ -8,7 +8,7 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => env('APP_NAME', 'laravel-backup'),
+        'name' => env('APP_NAME', 'loherb-admin-backup'),
 
         'source' => [
 
@@ -124,7 +124,7 @@ return [
         ],
 
         'slack' => [
-            'webhook_url' => env('SLACK_WEBHOOK'),
+            'webhook_url' => env('SLACK_ENDPOINT'),
 
             /*
              * If this is set to null the default channel of the webhook will be used.
@@ -145,7 +145,7 @@ return [
      */
     'monitor_backups' => [
         [
-            'name' => env('APP_NAME', 'laravel-backup'),
+            'name' => env('APP_NAME', 'loherb-admin-backup'),
             'disks' => ['s3'],
             'health_checks' => [
                 \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
