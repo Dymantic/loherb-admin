@@ -12,7 +12,9 @@
                          v-model="post.body[l]"
                          class="max-w-lg mx-auto"
                          :image-upload-path="`/multilingual-posts/posts/${post.id}/images`"
+                         v-slot="{document}"
                          v-if="l === lang">
+                    <embed-video-button :trix="document"></embed-video-button>
                 </wysiwyg>
             </div>
             <div class="w-100 bg-grey-lightest h-full relative">
@@ -109,6 +111,7 @@
     import {Post} from "../../Blog/Post";
     import PublishButton from "./PostPublishButton";
     import BusyButton from "../BusyButton";
+    import EmbedVideoButton from "./VideoPlugin";
 
     export default {
         props: ["post-id", 'categories'],
@@ -116,7 +119,8 @@
             Wysiwyg,
             ImageUpload,
             PublishButton,
-            BusyButton
+            BusyButton,
+            EmbedVideoButton
         },
 
         data() {

@@ -14,21 +14,22 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^2.0",
+        "laravel-mix": "^2.1.14",
         "less": "^3.8.0",
         "less-loader": "^4.1.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
         "tailwindcss": "^0.6.4",
-        "vue": "^2.5.7"
+        "vue": "^2.6.8"
     },
     "dependencies": {
         "@dymantic/imagineer": "^0.1.1",
         "@dymantic/modal": "^0.1.0",
         "@dymantic/vue-forms": "^0.2.6",
-        "@dymantic/vue-trix-editor": "^0.1.6",
+        "@dymantic/vue-trix-editor": "^0.2.0",
         "@dymantic/vuetilities": "^0.3.3",
         "imagemin-pngquant": "5.0.1",
+        "vue-template-compiler": "^2.6.8",
         "vuejs-datepicker": "^1.5.3"
     }
 }
