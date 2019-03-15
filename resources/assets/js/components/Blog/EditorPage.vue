@@ -12,6 +12,7 @@
                          v-model="post.body[l]"
                          class="max-w-lg mx-auto"
                          :image-upload-path="`/multilingual-posts/posts/${post.id}/images`"
+                         :max-image-file-size="20"
                          v-slot="{document}"
                          v-if="l === lang">
                     <embed-video-button :trix="document"></embed-video-button>
@@ -82,7 +83,7 @@
             </div>
             <div class="w-full h-16 border absolute pin-b flex justify-between px-4 items-center bg-white shadow">
                 <div class="flex justify-between items-center">
-
+                    <delete-post-button :post-id="post.id"></delete-post-button>
                     <publish-button :init-draft="post.is_draft"
                                     :post-id="postId"
                                     :init-publish-date="post.publish_date"
@@ -112,6 +113,7 @@
     import PublishButton from "./PostPublishButton";
     import BusyButton from "../BusyButton";
     import EmbedVideoButton from "./VideoPlugin";
+    import DeletePostButton from "./DeletePostButton";
 
     export default {
         props: ["post-id", 'categories'],
@@ -120,7 +122,8 @@
             ImageUpload,
             PublishButton,
             BusyButton,
-            EmbedVideoButton
+            EmbedVideoButton,
+            DeletePostButton
         },
 
         data() {
