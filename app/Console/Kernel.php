@@ -26,6 +26,12 @@ class Kernel extends ConsoleKernel
     {
          $schedule->command('simple-weather:current')
                   ->dailyAt("12:00");
+
+        $schedule->command('backup:clean')
+                 ->dailyAt('04:00');
+        $schedule->command('backup:run')
+                 ->dailyAt('04:30');
+
     }
 
     /**
