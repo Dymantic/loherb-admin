@@ -16516,7 +16516,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     doInsert: function doInsert() {
-      this.trix.attachment(this.insertion);
+      var wrapped_iframe = "<div class=\"aspect-16-9\">" + this.insertion + "</div>";
+      this.trix.attachment(wrapped_iframe);
       this.show = false;
       this.insertion = "";
     }

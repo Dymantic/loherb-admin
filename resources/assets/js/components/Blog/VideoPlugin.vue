@@ -35,7 +35,8 @@ export default {
   },
   methods: {
     doInsert() {
-      this.trix.attachment(this.insertion);
+      const wrapped_iframe = `<div class="aspect-16-9">${this.insertion}</div>`;
+      this.trix.attachment(wrapped_iframe);
       this.show = false;
       this.insertion = "";
     }
