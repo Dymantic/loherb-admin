@@ -467,16 +467,16 @@
         },
         {
             "name": "dymantic/multilingual-posts",
-            "version": "v0.3.1",
+            "version": "v0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/multilingual-posts.git",
-                "reference": "9563036c6dde7f163b99448e93a55f0e531c76cf"
+                "reference": "51b1bb2881e57a92fffe54c54593edb4bc03b410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/multilingual-posts/zipball/9563036c6dde7f163b99448e93a55f0e531c76cf",
-                "reference": "9563036c6dde7f163b99448e93a55f0e531c76cf",
+                "url": "https://api.github.com/repos/Dymantic/multilingual-posts/zipball/51b1bb2881e57a92fffe54c54593edb4bc03b410",
+                "reference": "51b1bb2881e57a92fffe54c54593edb4bc03b410",
                 "shasum": ""
             },
             "require": {
@@ -511,7 +511,7 @@
                 }
             ],
             "description": "Laravel Model and helpers for multilingual posts",
-            "time": "2019-03-10T06:30:07+00:00"
+            "time": "2019-08-08T02:42:44+00:00"
         },
         {
             "name": "dymantic/secretary",
