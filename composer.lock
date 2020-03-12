@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd95335b50fb753255426493ce9a7e81",
+    "content-hash": "f5b1b65e996c1a24f8891a32caf24e23",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -576,16 +576,16 @@
         },
         {
             "name": "dymantic/simple-weather",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/simple-weather.git",
-                "reference": "4865a6e301411182e175692c397520c0973f1b43"
+                "reference": "23eaf6afe814b4c242549dd7ffeb7472b98b0f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/simple-weather/zipball/4865a6e301411182e175692c397520c0973f1b43",
-                "reference": "4865a6e301411182e175692c397520c0973f1b43",
+                "url": "https://api.github.com/repos/Dymantic/simple-weather/zipball/23eaf6afe814b4c242549dd7ffeb7472b98b0f43",
+                "reference": "23eaf6afe814b4c242549dd7ffeb7472b98b0f43",
                 "shasum": ""
             },
             "require": {
@@ -618,7 +618,7 @@
                 }
             ],
             "description": "A simple weather summary using apixu api",
-            "time": "2018-10-18T02:04:00+00:00"
+            "time": "2020-03-12T03:12:44+00:00"
         },
         {
             "name": "egulias/email-validator",

@@ -12,7 +12,7 @@
         "dymantic/laravel-instagram-feed": "^0.1.1",
         "dymantic/multilingual-posts": "^0.5",
         "dymantic/secretary": "^0.1.2",
-        "dymantic/simple-weather": "^0.1",
+        "dymantic/simple-weather": "^0.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^6.0",
