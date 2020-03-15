@@ -94,9 +94,3 @@
         }
     }
 </script>
-
-<style scoped
-       lang="css"
-       type="text/css">
-
-</style>

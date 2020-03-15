@@ -16,8 +16,17 @@ class InstagramFeedStatusController extends Controller
         $has_access = true;
         $media = [];
 
+        if(!$profile->latestToken()) {
+            return [
+                'checked' => true,
+                'has_access' => false,
+                'auth_url' => $profile->getInstagramAuthUrl(),
+                'media' => [],
+            ];
+        }
+
         try {
-            $media = app()->make(Instagram::class)->fetchMedia($profile->accessToken());
+            $media = app()->make(Instagram::class)->fetchMedia($profile->latestToken());
         } catch(BadTokenException $badTokenException) {
             $has_access = false;
         } catch(\Exception $e) {

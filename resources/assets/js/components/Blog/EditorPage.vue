@@ -213,8 +213,7 @@
 </script>
 
 <style scoped
-       lang="less"
-       type="text/scss">
+       lang="less">
     .current-lang:after {
         content: "";
         margin-left: 10px;

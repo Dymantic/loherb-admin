@@ -41,7 +41,3 @@
         }
     }
 </script>
-
-<style scoped lang="less" type="text/css">
-
-</style>

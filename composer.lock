@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5b1b65e996c1a24f8891a32caf24e23",
+    "content-hash": "647f94ab976ee3a57e6d970569c4a1d4",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -435,16 +435,16 @@
         },
         {
             "name": "dymantic/laravel-instagram-feed",
-            "version": "v0.1.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/laravel-instagram-feed.git",
-                "reference": "191193ed05c0acf0247e4cf8971ba4e3e27e48a9"
+                "reference": "7204dbdb44432e87469aae5e31b1038ccdd49242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/191193ed05c0acf0247e4cf8971ba4e3e27e48a9",
-                "reference": "191193ed05c0acf0247e4cf8971ba4e3e27e48a9",
+                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/7204dbdb44432e87469aae5e31b1038ccdd49242",
+                "reference": "7204dbdb44432e87469aae5e31b1038ccdd49242",
                 "shasum": ""
             },
             "require": {
@@ -477,7 +477,7 @@
                 }
             ],
             "description": "Fetches the instagram feed for given authenticated profiles",
-            "time": "2018-10-09T00:59:04+00:00"
+            "time": "2020-03-15T03:39:51+00:00"
         },
         {
             "name": "dymantic/multilingual-posts",

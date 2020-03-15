@@ -15,7 +15,7 @@
     }
 </script>
 
-<style scoped lang="scss" type="text/scss">
+<style scoped lang="less">
     .waiting-state {
         & > div {
             width: .5rem;

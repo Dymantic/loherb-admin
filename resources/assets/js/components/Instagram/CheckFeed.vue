@@ -7,7 +7,7 @@
                 <p class="text-lg text-blue font-bold mb-8">All good!</p>
                 <p>Your Instagram feed is connected. Here are your latest posts. The sites will only update daily.</p>
                 <div class="flex flex-wrap mt-12">
-                    <img v-for="image in media" :src="image.low" class="h-32 w-32 object-cover block m-2"
+                    <img v-for="image in media" :src="image.url" class="h-32 w-32 object-cover block m-2"
                          alt="">
                 </div>
             </div>
@@ -74,7 +74,3 @@
         }
     }
 </script>
-
-<style scoped lang="scss" type="text/scss">
-
-</style>

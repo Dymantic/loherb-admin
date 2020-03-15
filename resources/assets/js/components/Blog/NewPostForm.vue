@@ -50,6 +50,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="less" type="text/scss">
-</style>

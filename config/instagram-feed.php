@@ -30,5 +30,7 @@ return [
      * If the OAuth process fails for some reason you will be redirected to this route.
      * You may use query strings to carry messages
      */
-    'failure_redirect_to' => 'instagram-auth-failure'
+    'failure_redirect_to' => 'instagram-auth-failure',
+
+    'ignore_video' => true,
 ];

@@ -9,7 +9,7 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
-        "dymantic/laravel-instagram-feed": "^0.1.1",
+        "dymantic/laravel-instagram-feed": "^2.0",
         "dymantic/multilingual-posts": "^0.5",
         "dymantic/secretary": "^0.1.2",
         "dymantic/simple-weather": "^0.2",
