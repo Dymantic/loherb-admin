@@ -27,6 +27,9 @@ class Kernel extends ConsoleKernel
          $schedule->command('simple-weather:current')
                   ->dailyAt("12:00");
 
+        $schedule->command('instagram-feed:refresh-tokens')
+                 ->monthly();
+
         $schedule->command('backup:clean')
                  ->dailyAt('04:00');
         $schedule->command('backup:run')
