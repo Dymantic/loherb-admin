@@ -13,6 +13,6 @@ class PostImagesController extends Controller
         request()->validate(['image' => ['required', 'image']]);
         $image = $post->attachImage(request('image'));
 
-        return ['url' => $image->getUrl('web')];
+        return ['url' => config('app.url') . $image->getUrl('web')];
     }
 }
