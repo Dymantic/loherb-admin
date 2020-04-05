@@ -30,6 +30,7 @@ return [
             'optimize'     => true,
         ],
     ],
+    'use_full_url_for_body_images' => true,
     'media-broker' => \Dymantic\SmlMediaBroker\SmlMediaBroker::class,
     'upload-response-src' => [
         'title' => 'banner',
