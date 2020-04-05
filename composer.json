@@ -8,28 +8,31 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2.5",
         "dymantic/laravel-instagram-feed": "^2.0",
-        "dymantic/multilingual-posts": "^0.5",
+        "dymantic/multilingual-posts": "^0.8",
+        "dymantic/sml-mediabroker": "^0.7.0",
         "dymantic/secretary": "^0.1.2",
         "dymantic/simple-weather": "^0.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^6.0",
-        "laravel/helpers": "^1.1",
+        "laravel/framework": "^7.0",
+        "laravel/helpers": "^1.2",
         "laravel/slack-notification-channel": "^2.0",
-        "laravel/tinker": "^1.0",
+        "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "spatie/laravel-backup": "^6.1",
         "spatie/laravel-medialibrary": "^7.0.0",
-        "spatie/laravel-translatable": "^4.0"
+        "spatie/laravel-translatable": "^4.0",
+        "facade/ignition": "^2.0",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^2.0",
-        "phpunit/phpunit": "^7.0"
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.0"
     },
     "autoload": {
         "classmap": [
