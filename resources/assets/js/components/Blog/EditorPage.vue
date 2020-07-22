@@ -16,6 +16,7 @@
                          v-slot="{document}"
                          v-if="l === lang">
                     <embed-video-button :trix="document"></embed-video-button>
+                    <prezi-embed :trix="document"></prezi-embed>
                 </wysiwyg>
             </div>
             <div class="w-100 bg-grey-lightest h-full relative">
@@ -113,6 +114,7 @@
     import PublishButton from "./PostPublishButton";
     import BusyButton from "../BusyButton";
     import EmbedVideoButton from "./VideoPlugin";
+    import PreziEmbed from "./PreziEmbed";
     import DeletePostButton from "./DeletePostButton";
 
     export default {
@@ -123,7 +125,8 @@
             PublishButton,
             BusyButton,
             EmbedVideoButton,
-            DeletePostButton
+            DeletePostButton,
+            PreziEmbed,
         },
 
         data() {
