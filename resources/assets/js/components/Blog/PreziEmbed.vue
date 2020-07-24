@@ -7,7 +7,7 @@
         <modal :show="showModal" @close="showModal = false">
             <div class="w-screen max-w-md p-6">
                 <p class="font-bold text-xl mb-4">Prezi Embed</p>
-                <p class="my-4 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam assumenda doloribus esse laudantium libero magnam, molestiae nostrum porro quia rem sed temporibus voluptate. Aspernatur ducimus enim labore laboriosam quibusdam.</p>
+                <p class="my-4 text-sm">Find the "view link" for your Prezi presentation, and paste it in below. It should be something like "https://prezi.com/view/25QVcyk0znxyTSlXFotI/"</p>
                 <input type="text" v-model="insertion" class="w-full block border border-gray-200 p-2">
                 <div class="flex justify-end mt-6">
                     <button @click="showModal = false" class="mr-4">Cancel</button>
