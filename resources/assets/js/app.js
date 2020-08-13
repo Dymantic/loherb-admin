@@ -19,6 +19,8 @@ import BlogIndex from "./components/Blog/BlogIndex";
 import EditorPage from "./components/Blog/EditorPage";
 import NewPostForm from "./components/Blog/NewPostForm";
 
+import CategoriesIndex from "./components/Blog/CategoriesIndex";
+
 import CheckFeed from "./components/Instagram/CheckFeed";
 
 Vue.component("dropdown-item", Dropdown);
@@ -33,6 +35,7 @@ Vue.component("blog-index", BlogIndex);
 Vue.component("new-post-form", NewPostForm);
 Vue.component("editor-page", EditorPage);
 Vue.component("check-instagram-feed", CheckFeed);
+Vue.component("categories-index", CategoriesIndex);
 
 Vue.config.ignoredElements = [
     'trix-editor',

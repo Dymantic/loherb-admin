@@ -43,11 +43,27 @@
                     </div>
                     <div class="my-6"
                          v-if="post.category_id">
-                        <p class="font-bold text-xs uppercase tracking-wide">Category</p>
-                        <div class="flex flex-wrap justify-around">
-                            <label v-for="category in categories"
+                        <p class="font-bold text-xs uppercase tracking-wide">Blogs</p>
+                        <div class="my-1" v-for="category in top_categories">
+                            <label
                                    :for="category.slug"
                                    class="w-2/5 my-2">
+                                <input :value="category.id"
+                                       v-model="post.category_id"
+                                       :id="category.slug"
+                                       type="checkbox"
+                                       class="hidden">
+                                <span class="psuedo-check-label">{{ category.title }}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="my-6"
+                         v-if="post.category_id">
+                        <p class="font-bold text-xs uppercase tracking-wide">Villa Categories</p>
+                        <div class="my-1" v-for="category in villa_subcategories">
+                            <label
+                                :for="category.slug"
+                                class="w-2/5 my-2">
                                 <input :value="category.id"
                                        v-model="post.category_id"
                                        :id="category.slug"
@@ -168,6 +184,20 @@
 
             should_save() {
                 return this.post.is_dirty;
+            },
+
+            top_categories() {
+                return this.categories.filter(cat => {
+                    const allowed = ['Villa', 'Cuisine', 'Patisserie'];
+                    return allowed.includes(cat.title);
+                });
+            },
+
+            villa_subcategories() {
+                return this.categories.filter(cat => {
+                    const allowed = ['Villa', 'Cuisine', 'Patisserie'];
+                    return !allowed.includes(cat.title) && cat.title !== 'Estate';
+                });
             }
         },
 

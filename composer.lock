@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1813b638635cbc42058bfe244cf3038",
+    "content-hash": "85d823a00934435ec654dba8136d3bca",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -532,16 +532,16 @@
         },
         {
             "name": "dymantic/multilingual-posts",
-            "version": "v0.8.4",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/multilingual-posts.git",
-                "reference": "aba236bd9624f4316860e5bb332d327ab61d1a5b"
+                "reference": "3629a7f1eae8f2378e118cf9d192d6a1f16dd87f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/multilingual-posts/zipball/aba236bd9624f4316860e5bb332d327ab61d1a5b",
-                "reference": "aba236bd9624f4316860e5bb332d327ab61d1a5b",
+                "url": "https://api.github.com/repos/Dymantic/multilingual-posts/zipball/3629a7f1eae8f2378e118cf9d192d6a1f16dd87f",
+                "reference": "3629a7f1eae8f2378e118cf9d192d6a1f16dd87f",
                 "shasum": ""
             },
             "require": {
@@ -577,7 +577,7 @@
                 }
             ],
             "description": "Laravel Model and helpers for multilingual posts",
-            "time": "2020-04-05T09:27:51+00:00"
+            "time": "2020-08-13T00:48:18+00:00"
         },
         {
             "name": "dymantic/secretary",
@@ -6831,5 +6831,7 @@
     "platform": {
         "php": "^7.2.5"
     },
-    "platform-dev": []
+    "platform-dev": {
+        "ext-json": "*"
+    }
 }

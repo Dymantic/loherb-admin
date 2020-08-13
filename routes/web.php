@@ -39,6 +39,13 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('blog/posts/{post}/images', 'Blog\PostImagesController@store');
 
+    Route::view('categories', 'blog.categories.index');
+
+    Route::get('blog/categories', 'BlogCategoriesController@index');
+    Route::post('blog/categories', 'BlogCategoriesController@store');
+    Route::post('blog/categories/{category}', 'BlogCategoriesController@update');
+    Route::delete('blog/categories/{category}', 'BlogCategoriesController@delete');
+
     Route::get('instagram-feed-status', 'InstagramFeedStatusController@show');
 
     Route::redirect('instagram-auth-success', '/');
