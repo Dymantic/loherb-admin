@@ -8,7 +8,7 @@
         <dropdown-item v-cloak name="Blog" class="text-white h-12 flex items-center mr-4">
             <div slot="dropdown_content" class="pt-3">
                 <a href="/blog" class="text-grey-darker no-underline hover:text-green block mb-3">Posts</a>
-                <a href="/categories" class="text-grey-darker no-underline hover:text-green block ">Categories</a>
+                <a href="/categories" class="text-grey-darker no-underline hover:text-green block ">Villa Categories</a>
             </div>
         </dropdown-item>
         <a href="/users" class="text-white no-underline mr-4">Users</a>

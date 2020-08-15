@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex justify-between items-center mt-4 mb-12">
-            <h1 class="text-4xl font-sans text-grey-darkest normal">Categories</h1>
+            <h1 class="text-4xl font-sans text-grey-darkest normal">Villa Subcategories</h1>
             <div class="flex justify-end items-center">
                 <category-form @updated="fetchCategories"></category-form>
             </div>
@@ -11,11 +11,13 @@
                 <div class="max-w-lg flex justify-between">
                     <div class="mr-6 w-1/2 flex-1">
                         <p class="font-bold text-lg">{{ category.title.en }}</p>
-                        <p class="my-4">{{ category.description.en }}</p>
+                        <p class="my-4">{{ category.intro.en }}</p>
+                        <p class="my-4 text-sm text-gray-light">{{ category.description.en }}</p>
                     </div>
                     <div class="ml-6 w-1/2 flex-1">
                         <p class="font-bold text-lg">{{ category.title.zh }}</p>
-                        <p class="my-4">{{ category.description.zh }}</p>
+                        <p class="my-4">{{ category.intro.zh }}</p>
+                        <p class="my-4 text-sm text-gray-light">{{ category.description.zh }}</p>
                     </div>
                 </div>
                 <div class="flex justify-end">

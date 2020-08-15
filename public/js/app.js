@@ -17377,6 +17377,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -17457,6 +17459,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -17468,13 +17480,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             submitError: false,
             formData: {
                 title: { en: '', zh: '' },
-                description: { en: '', zh: '' }
+                description: { en: '', zh: '' },
+                intro: { en: '', zh: '' }
             },
             formErrors: {
                 'title.en': '',
                 'title.zh': '',
                 'description.en': '',
-                'description.zh': ''
+                'description.zh': '',
+                'intro.en': '',
+                'intro.zh': ''
             }
         };
     },
@@ -17496,7 +17511,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (this.category) {
             this.formData = {
                 title: { en: this.category.title.en, zh: this.category.title.zh },
-                description: { en: this.category.description.en, zh: this.category.description.zh }
+                description: { en: this.category.description.en, zh: this.category.description.zh },
+                intro: { en: this.category.intro.en, zh: this.category.intro.zh }
             };
         }
     },
@@ -17517,7 +17533,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         onSuccess: function onSuccess() {
-            this.clearForm();
+            if (!this.is_edit) {
+                this.clearForm();
+            }
+
             this.showForm = false;
             this.$emit('updated');
         },
@@ -17544,13 +17563,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'title.en': '',
                 'title.zh': '',
                 'description.en': '',
-                'description.zh': ''
+                'description.zh': '',
+                'intro.en': '',
+                'intro.zh': ''
             };
         },
         clearForm: function clearForm() {
             this.formData = {
                 title: { en: '', zh: '' },
-                description: { en: '', zh: '' }
+                description: { en: '', zh: '' },
+                intro: { en: '', zh: '' }
             };
         }
     }
@@ -20411,6 +20433,68 @@ var render = function() {
                     {
                       staticClass: "my-4",
                       class: {
+                        "border-b border-red": _vm.formErrors["intro.en"]
+                      }
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "font-bold text-gray-dark text-sm",
+                          attrs: { for: "intro.en" }
+                        },
+                        [_vm._v("Short Introduction (English)")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.formErrors["intro.en"],
+                              expression: "formErrors['intro.en']"
+                            }
+                          ],
+                          staticClass: "text-xs text-red"
+                        },
+                        [_vm._v(_vm._s(_vm.formErrors["intro.en"]))]
+                      ),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.intro.en,
+                            expression: "formData.intro.en"
+                          }
+                        ],
+                        staticClass: "block p-2 h-24 border w-full mt-1",
+                        attrs: { name: "intro.en", id: "intro.en" },
+                        domProps: { value: _vm.formData.intro.en },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData.intro,
+                              "en",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "my-4",
+                      class: {
                         "border-b border-red": _vm.formErrors["description.en"]
                       }
                     },
@@ -20541,6 +20625,68 @@ var render = function() {
                     {
                       staticClass: "my-4",
                       class: {
+                        "border-b border-red": _vm.formErrors["intro.zh"]
+                      }
+                    },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "font-bold text-gray-dark text-sm",
+                          attrs: { for: "intro.zh" }
+                        },
+                        [_vm._v("Short Introduction (Chinese)")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.formErrors["intro.zh"],
+                              expression: "formErrors['intro.zh']"
+                            }
+                          ],
+                          staticClass: "text-xs text-red"
+                        },
+                        [_vm._v(_vm._s(_vm.formErrors["intro.zh"]))]
+                      ),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.intro.zh,
+                            expression: "formData.intro.zh"
+                          }
+                        ],
+                        staticClass: "block p-2 h-24 border w-full mt-1",
+                        attrs: { name: "intro.zh", id: "intro.zh" },
+                        domProps: { value: _vm.formData.intro.zh },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData.intro,
+                              "zh",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "my-4",
+                      class: {
                         "border-b border-red": _vm.formErrors["description.zh"]
                       }
                     },
@@ -20654,7 +20800,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "flex justify-between items-center mt-4 mb-12" }, [
       _c("h1", { staticClass: "text-4xl font-sans text-grey-darkest normal" }, [
-        _vm._v("Categories")
+        _vm._v("Villa Subcategories")
       ]),
       _vm._v(" "),
       _c(
@@ -20679,6 +20825,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "my-4" }, [
+                  _vm._v(_vm._s(category.intro.en))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "my-4 text-sm text-gray-light" }, [
                   _vm._v(_vm._s(category.description.en))
                 ])
               ]),
@@ -20689,6 +20839,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "my-4" }, [
+                  _vm._v(_vm._s(category.intro.zh))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "my-4 text-sm text-gray-light" }, [
                   _vm._v(_vm._s(category.description.zh))
                 ])
               ])

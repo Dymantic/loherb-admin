@@ -12,6 +12,11 @@
                             <span class="text-xs text-red" v-show="formErrors['title.en']">{{ formErrors['title.en'] }}</span>
                             <input type="text" name="title.en" v-model="formData.title.en" class="mt-1 block p-2 border w-full" id="title.en">
                         </div>
+                        <div class="my-4" :class="{'border-b border-red': formErrors['intro.en']}">
+                            <label class="font-bold text-gray-dark text-sm" for="intro.en">Short Introduction (English)</label>
+                            <span class="text-xs text-red" v-show="formErrors['intro.en']">{{ formErrors['intro.en'] }}</span>
+                            <textarea name="intro.en" v-model="formData.intro.en" class="block p-2 h-24 border w-full mt-1" id="intro.en"></textarea>
+                        </div>
                         <div class="my-4" :class="{'border-b border-red': formErrors['description.en']}">
                             <label class="font-bold text-gray-dark text-sm" for="description.en">SEO Description (English)</label>
                             <span class="text-xs text-red" v-show="formErrors['description.en']">{{ formErrors['description.en'] }}</span>
@@ -23,6 +28,11 @@
                             <label class="font-bold text-gray-dark text-sm" for="title.zh">Name (Chinese)</label>
                             <span class="text-xs text-red" v-show="formErrors['title.zh']">{{ formErrors['title.zh'] }}</span>
                             <input type="text" name="title.zh" v-model="formData.title.zh" class="mt-1 block p-2 border w-full" id="title.zh">
+                        </div>
+                        <div class="my-4" :class="{'border-b border-red': formErrors['intro.zh']}">
+                            <label class="font-bold text-gray-dark text-sm" for="intro.zh">Short Introduction (Chinese)</label>
+                            <span class="text-xs text-red" v-show="formErrors['intro.zh']">{{ formErrors['intro.zh'] }}</span>
+                            <textarea name="intro.zh" v-model="formData.intro.zh" class="block p-2 h-24 border w-full mt-1" id="intro.zh"></textarea>
                         </div>
                         <div class="my-4" :class="{'border-b border-red': formErrors['description.zh']}">
                             <label class="font-bold text-gray-dark text-sm" for="description.zh">SEO Description (Chinese)</label>
@@ -52,12 +62,15 @@ export default {
             formData: {
                 title: {en: '', zh: ''},
                 description: {en: '', zh: ''},
+                intro: {en: '', zh: ''},
             },
             formErrors: {
                 'title.en': '',
                 'title.zh': '',
                 'description.en': '',
                 'description.zh': '',
+                'intro.en': '',
+                'intro.zh': '',
             }
         };
     },
@@ -81,6 +94,7 @@ export default {
             this.formData = {
                 title: {en: this.category.title.en, zh: this.category.title.zh},
                 description: {en: this.category.description.en, zh: this.category.description.zh},
+                intro: {en: this.category.intro.en, zh: this.category.intro.zh},
             }
         }
     },
@@ -96,7 +110,10 @@ export default {
         },
 
         onSuccess() {
-            this.clearForm();
+            if(!this.is_edit) {
+                this.clearForm();
+            }
+
             this.showForm = false;
             this.$emit('updated');
         },
@@ -121,6 +138,8 @@ export default {
                     'title.zh': '',
                     'description.en': '',
                     'description.zh': '',
+                    'intro.en': '',
+                    'intro.zh': '',
             };
         },
 
@@ -128,6 +147,7 @@ export default {
             this.formData = {
                 title: {en: '', zh: ''},
                 description: {en: '', zh: ''},
+                intro: {en: '', zh: ''},
             };
         }
     }

@@ -23,22 +23,25 @@ class UpdateBlogCategoryTest extends TestCase
         $category = Category::create([
             'title'       => ['en' => 'test title', 'zh' => 'zh test title'],
             'description' => ['en' => 'test description', 'zh' => 'zh test description'],
+            'intro'       => ['en' => 'test intro', 'zh' => 'zh test intro'],
         ]);
 
         $response = $this->asLoggedInUser()->postJson("/blog/categories/{$category->id}", [
             'title'       => ['en' => 'new title', 'zh' => 'zh new title'],
             'description' => ['en' => 'new description', 'zh' => 'zh new description'],
+            'intro'       => ['en' => 'new intro', 'zh' => 'zh new intro'],
         ]);
         $response->assertSuccessful();
 
         $this->assertDatabaseHas('multilingual_categories', [
             'title'       => json_encode(['en' => 'new title', 'zh' => 'zh new title']),
             'description' => json_encode(['en' => "new description", 'zh' => "zh new description"]),
+            'intro'       => json_encode(['en' => 'new intro', 'zh' => 'zh new intro']),
         ]);
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_title_is_required()
     {
@@ -46,7 +49,7 @@ class UpdateBlogCategoryTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_title_is_required_in_both_languages()
     {

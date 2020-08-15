@@ -22,12 +22,14 @@ class AddCategoryTest extends TestCase
         $response = $this->asLoggedInUser()->postJson("/blog/categories", [
             'title' => ['en' => 'test title', 'zh' => 'zh test title'],
             'description' => ['en' => "description", 'zh' => "zh description"],
+            'intro' => ['en' => 'test intro', 'zh' => 'zh test intro'],
         ]);
         $response->assertSuccessful();
 
         $this->assertDatabaseHas('multilingual_categories', [
             'title' => json_encode(['en' => 'test title', 'zh' => 'zh test title']),
             'description' => json_encode(['en' => "description", 'zh' => "zh description"]),
+            'intro' => json_encode(['en' => 'test intro', 'zh' => 'zh test intro']),
         ]);
     }
 
@@ -53,6 +55,7 @@ class AddCategoryTest extends TestCase
         $valid = [
             'title' => ['en' => 'test title', 'zh' => 'zh test title'],
             'description' => ['en' => "description", 'zh' => "zh description"],
+            'intro' => ['en' => 'test intro', 'zh' => 'zh test intro'],
         ];
 
         $response = $this

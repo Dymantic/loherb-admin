@@ -25,7 +25,11 @@ class BlogCategoriesController extends Controller
             'title.zh' => ['required'],
         ]);
 
-        Category::create(request()->all());
+        Category::create(request()->all([
+            'title',
+            'description',
+            'intro'
+        ]));
     }
 
     public function update(Category $category)
@@ -36,12 +40,12 @@ class BlogCategoriesController extends Controller
             'title.zh' => ['required'],
         ]);
 
-        $category->update(request()->only('title', 'description'));
+        $category->update(request()->only('title', 'description', 'intro'));
     }
 
     public function delete(Category $category)
     {
-        
+
         $category->delete();
     }
 }
