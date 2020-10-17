@@ -9,6 +9,7 @@
                     class="my-6">{{ post.title[lang] }}</h1>
                 <wysiwyg v-for="l in Object.keys(post.body)"
                          :key="`wysiwyg_${l}`"
+                         :multi-headings="true"
                          v-model="post.body[l]"
                          class="max-w-lg mx-auto"
                          :image-upload-path="`/multilingual-posts/posts/${post.id}/images`"
