@@ -45,7 +45,7 @@ class UpdateUserTest extends TestCase
         $response = $this->asLoggedInUser()->json("POST", "/users/{$user->id}", $new_data);
         $response->assertStatus(200);
 
-        $this->assertEquals($user->fresh()->toArray(), $response->decodeResponseJson());
+        $this->assertEquals($user->fresh()->toArray(), $response->json());
     }
 
     /**
