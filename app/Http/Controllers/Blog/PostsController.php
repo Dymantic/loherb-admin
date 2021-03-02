@@ -15,6 +15,7 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::latest()->paginate(15);
+//        dd(collect($posts->items())->pluck('title'));
         return view('blog.index', [
             'posts' => $posts->items(),
             'page' => $posts->currentPage(),
@@ -22,7 +23,7 @@ class PostsController extends Controller
         ]);
     }
 
-    
+
 
     public function edit(Post $post)
     {
@@ -35,5 +36,5 @@ class PostsController extends Controller
         })->all();
         return view('blog.edit', ['post_id' => $post->id, 'categories' => $categories]);
     }
-    
+
 }

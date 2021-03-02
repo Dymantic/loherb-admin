@@ -1,11 +1,16 @@
 <template>
     <div>
-        <div class="flex justify-between items-center mt-4 mb-12">
+        <div class="flex justify-between items-center my-12">
             <h1 class="text-4xl font-sans text-grey-darkest normal">Blog Posts</h1>
             <div class="flex justify-end items-center">
                 <new-post-form></new-post-form>
             </div>
         </div>
+
+        <div class="my-12">
+            <language-selector v-model="lang"></language-selector>
+        </div>
+
         <div class="flex justify-between my-8 max-w-lg mx-auto">
             <button @click="getPrevPage"
                     class="btn btn-primary"
@@ -20,6 +25,7 @@
         <div class="bg-grey-lightest max-w-lg mx-auto shadow rounded mb-8">
             <blog-post-index-card v-for="post in posts"
                                   :key="post.id"
+                                  :lang="lang"
                                   :post="post"></blog-post-index-card>
 
         </div>
@@ -37,7 +43,7 @@
 
         data() {
             return {
-                lang: "en",
+                lang: "zh",
                 posts: [],
                 current_page: 1
             };

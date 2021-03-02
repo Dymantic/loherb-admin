@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::view('reset-password', 'auth.reset-password');
     Route::post('reset-password', 'UserPasswordController@update');
 
+    Route::get('api/blog', 'Api\BlogPostsController@index');
     Route::get('blog', 'Blog\PostsController@index');
     Route::get('blog/posts/{post}/edit', 'Blog\PostsController@edit');
     Route::get('blog/posts/{post}', 'Blog\PostsController@show');

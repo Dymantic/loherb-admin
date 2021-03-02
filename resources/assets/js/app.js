@@ -15,6 +15,8 @@ import UserPage from "./components/Users/UserPage";
 import UserForm from "./components/Users/UserForm";
 import UsersIndex from "./components/Users/UsersIndex";
 
+import LanguageSelector from "./components/LanguageSelector";
+
 import BlogIndex from "./components/Blog/BlogIndex";
 import EditorPage from "./components/Blog/EditorPage";
 import NewPostForm from "./components/Blog/NewPostForm";
@@ -36,6 +38,7 @@ Vue.component("new-post-form", NewPostForm);
 Vue.component("editor-page", EditorPage);
 Vue.component("check-instagram-feed", CheckFeed);
 Vue.component("categories-index", CategoriesIndex);
+Vue.component("language-selector", LanguageSelector);
 
 Vue.config.ignoredElements = [
     'trix-editor',

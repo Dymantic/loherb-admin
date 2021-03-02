@@ -2,9 +2,10 @@
     <div>
         <div class="p-4 border-b border-grey-light flex justify-between items-center">
             <div>
+                <p class="text-xs text-grey-dark">{{ post.updated_at }} <span v-show="post.updated_at !== post.created_at">(updated)</span></p>
                 <a :href="`/blog/posts/${post.id}/edit`"
-                   class="no-underline hover:underline text-black">
-                    <p class="my-2 font-bold">{{ post.title['en'] }}</p>
+                   class="no-underline hover:underline text-grey-darkest">
+                    <p class="my-2 font-bold">{{ post_title }}</p>
                 </a>
                 <p>
                         <span v-for="category in post.categories"
@@ -12,6 +13,7 @@
                               class="uppercase text-xs mr-4"
                         >{{ category.title['en'] }}</span>
                 </p>
+
             </div>
             <div class="w-48 text-center">
                 <p :class="publish_colour" class="my-2 uppercase text-sm font-bold tracking-wide">{{ publish_status }}</p>
@@ -23,7 +25,7 @@
 
 <script type="text/babel">
     export default {
-        props: ['post'],
+        props: ['post', 'lang'],
 
         computed: {
             publish_status() {
@@ -48,6 +50,10 @@
                 }
 
                 return "text-orange";
+            },
+
+            post_title() {
+                return this.post.title[this.lang] || this.post.title.en;
             }
         }
     }

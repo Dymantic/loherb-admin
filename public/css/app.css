@@ -617,15 +617,16 @@ table {
 }
 
 .btn {
-  padding-left: .5rem;
-  padding-right: .5rem;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   text-transform: uppercase;
   letter-spacing: .05em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   font-size: .875rem;
   border-radius: .25rem;
+  font-weight: 600;
 }
 
 .btn-primary {
