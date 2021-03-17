@@ -568,16 +568,16 @@
         },
         {
             "name": "dymantic/laravel-instagram-feed",
-            "version": "v2.3.2",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/laravel-instagram-feed.git",
-                "reference": "5f72ede10bdd6148bf44ceb09920630820c40f88"
+                "reference": "01720408b7b65657afa431d6ad7db2bdfdf97f76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/5f72ede10bdd6148bf44ceb09920630820c40f88",
-                "reference": "5f72ede10bdd6148bf44ceb09920630820c40f88",
+                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/01720408b7b65657afa431d6ad7db2bdfdf97f76",
+                "reference": "01720408b7b65657afa431d6ad7db2bdfdf97f76",
                 "shasum": ""
             },
             "require": {
@@ -612,9 +612,9 @@
             "description": "Fetches the instagram feed for given authenticated profiles",
             "support": {
                 "issues": "https://github.com/Dymantic/laravel-instagram-feed/issues",
-                "source": "https://github.com/Dymantic/laravel-instagram-feed/tree/v2.3.2"
+                "source": "https://github.com/Dymantic/laravel-instagram-feed/tree/v2.4.0"
             },
-            "time": "2020-10-09T05:54:35+00:00"
+            "time": "2021-01-19T00:42:40+00:00"
         },
         {
             "name": "dymantic/multilingual-posts",
