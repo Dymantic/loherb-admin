@@ -6,6 +6,7 @@ use Dymantic\InstagramFeed\Exceptions\BadTokenException;
 use Dymantic\InstagramFeed\Instagram;
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class InstagramFeedStatusController extends Controller
 {
@@ -30,6 +31,7 @@ class InstagramFeedStatusController extends Controller
         } catch(BadTokenException $badTokenException) {
             $has_access = false;
         } catch(\Exception $e) {
+            Log::critical($e->getMessage());
             $checked = false;
         }
 
