@@ -568,23 +568,31 @@
         },
         {
             "name": "dymantic/laravel-instagram-feed",
-            "version": "v2.4.1",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dymantic/laravel-instagram-feed.git",
-                "reference": "075968a6eba519ec4ac7760608f5c72d1c5537c3"
+                "reference": "eff05d3d6dbf15db6a0ab36be6b3986737db926f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/075968a6eba519ec4ac7760608f5c72d1c5537c3",
-                "reference": "075968a6eba519ec4ac7760608f5c72d1c5537c3",
+                "url": "https://api.github.com/repos/Dymantic/laravel-instagram-feed/zipball/eff05d3d6dbf15db6a0ab36be6b3986737db926f",
+                "reference": "eff05d3d6dbf15db6a0ab36be6b3986737db926f",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^6.5 | ^7.0"
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.5 | ^7.0",
+                "illuminate/config": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "illuminate/console": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "illuminate/database": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "illuminate/http": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "illuminate/mail": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "illuminate/support": "5.8.* | ^6.0 | ^7.0 | ^8.0",
+                "php": "^7.1 | ^8.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.9"
+                "orchestra/testbench": "^6.0"
             },
             "type": "library",
             "extra": {
@@ -612,9 +620,9 @@
             "description": "Fetches the instagram feed for given authenticated profiles",
             "support": {
                 "issues": "https://github.com/Dymantic/laravel-instagram-feed/issues",
-                "source": "https://github.com/Dymantic/laravel-instagram-feed/tree/v2.4.1"
+                "source": "https://github.com/Dymantic/laravel-instagram-feed/tree/v2.4.3"
             },
-            "time": "2021-03-17T03:21:58+00:00"
+            "time": "2021-03-25T00:36:07+00:00"
         },
         {
             "name": "dymantic/multilingual-posts",
