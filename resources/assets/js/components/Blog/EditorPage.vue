@@ -18,6 +18,7 @@
                          v-if="l === lang">
                     <embed-video-button :trix="document"></embed-video-button>
                     <prezi-embed :trix="document"></prezi-embed>
+                    <simple-embed :trix="document"></simple-embed>
                 </wysiwyg>
             </div>
             <div class="w-100 bg-grey-lightest h-full relative">
@@ -132,6 +133,7 @@
     import BusyButton from "../BusyButton";
     import EmbedVideoButton from "./VideoPlugin";
     import PreziEmbed from "./PreziEmbed";
+    import SimpleEmbed from "./SimpleEmbed";
     import DeletePostButton from "./DeletePostButton";
 
     export default {
@@ -144,6 +146,7 @@
             EmbedVideoButton,
             DeletePostButton,
             PreziEmbed,
+            SimpleEmbed,
         },
 
         data() {
